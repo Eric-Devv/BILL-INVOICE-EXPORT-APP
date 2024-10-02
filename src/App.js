@@ -28,23 +28,21 @@ function App() {
 
     const handleDownloadPDF = () => {
         const pdf = new jsPDF();
-        pdf.text('Invoice', 20, 20);
+        pdf.text('INVOICE-REPORT', 20, 20);
 
         // Add items to PDF
         items.forEach((item, index) => {
-            const yPos = 30 + index * 10;
+            const yPos = 40 + index * 20;
             pdf.text(
-                `Item: ${item.item}, 
-                    Quantity: ${item.quantity}, 
-                    Price: ${item.price}`, 20, yPos);
+                `ITEM: ${item.item}:    Quantity: ${item.quantity}, 
+                       Price: Ksh ${item.price}`, 20, yPos);
         });
 
         // Add total amount to PDF
         const totalAmount =
             calculateTotalAmount();
         pdf.text(
-            `Total Amount: 
-                    $${totalAmount.toFixed(2)}`, 20, 180);
+            `TOTAL AMOUNT=  Ksh: ${totalAmount.toFixed(2)}`, 20, 180);
 
         // Save the PDF
         pdf.save('invoice.pdf');
@@ -52,7 +50,7 @@ function App() {
 
     return (
       <div className="App">
-        <h1>Bill/Invoice Generator</h1>
+        <h1 className='title'>Bill & Invoice manager</h1>
         <BillDetails onAddItem={handleAddItem} />
         <ItemList items={items} onDeleteItem={handleDeleteItem} />
         <TotalAmount total={calculateTotalAmount()} />

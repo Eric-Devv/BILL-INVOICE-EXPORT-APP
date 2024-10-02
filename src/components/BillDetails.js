@@ -27,13 +27,14 @@ const BillDetails = ({ onAddItem, onDeleteItem }) => {
     };
 
     return (
+        <>
         <div>
           <label>Item:</label>
           <input
             type="text"
             name="item"
             value={item}
-            onChange={handleAddItem}
+            onChange={(e)=>setItem(e.target.value)}
           />
     
           <label>Quantity:</label>
@@ -41,7 +42,7 @@ const BillDetails = ({ onAddItem, onDeleteItem }) => {
             type="number"
             name="quantity"
             value={quantity}
-            onChange={handleAddItem}
+            onChange={(e)=>setQuantity(e.target.value)}
           />
     
           <label>Price:</label>
@@ -49,13 +50,13 @@ const BillDetails = ({ onAddItem, onDeleteItem }) => {
             type="number"
             name="price"
             value={price}
-            onChange={handleAddItem}
+            onChange={(e)=>setPrice(e.target.value)}
           />
-    
-          <button onClick={handleAddItem}>Add Item</button>
     
           <p style={{ color: 'red' }}>{errorMessage}</p>
         </div>
+        <button className="additem"onClick={handleAddItem}>Add Item</button>
+        </>
       );
 };
 
