@@ -28,21 +28,21 @@ function App() {
 
     const handleDownloadPDF = () => {
         const pdf = new jsPDF();
-        pdf.text('INVOICE-REPORT', 20, 20);
+        pdf.text('INVOICE | REPORT', 20, 20);
 
         // Add items to PDF
         items.forEach((item, index) => {
             const yPos = 40 + index * 20;
             pdf.text(
                 `ITEM: ${item.item}:    Quantity: ${item.quantity}, 
-                       Price: Ksh ${item.price}`, 20, yPos);
+                          Price: Ksh ${item.price}`, 20, yPos);
         });
 
         // Add total amount to PDF
         const totalAmount =
             calculateTotalAmount();
         pdf.text(
-            `TOTAL AMOUNT=  Ksh: ${totalAmount.toFixed(2)}`, 20, 180);
+            `TOTAL AMOUNT=  Ksh: ${totalAmount.toFixed(2)}`, 20, 200);
 
         // Save the PDF
         pdf.save('invoice.pdf');

@@ -6,7 +6,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ebebeb;
+  background-color: #e2e1e1;
 }
 .title{
   background-color: gray;
@@ -90,4 +90,44 @@ button:hover {
 
 .download-btn:hover {
   background-color: #005684;
+}
+
+@media only screen and (max-width:600px){
+  .title{
+    background-color: gray;
+    height: 100%;
+    width: 96%;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  .item {
+    display: grid;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    padding: 2px;
+    
+  }
+
+  .App {
+    max-width: 320px;
+    max-height: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
 }

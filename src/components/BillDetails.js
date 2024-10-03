@@ -37,7 +37,7 @@ const BillDetails = ({ onAddItem, onDeleteItem }) => {
             onChange={(e)=>setItem(e.target.value)}
           />
     
-          <label>Quantity:</label>
+          <label>Quantity | pieces | mass(Kg/Ltr):</label>
           <input
             type="number"
             name="quantity"
@@ -45,7 +45,7 @@ const BillDetails = ({ onAddItem, onDeleteItem }) => {
             onChange={(e)=>setQuantity(e.target.value)}
           />
     
-          <label>Price:</label>
+          <label>Price per item:</label>
           <input
             type="number"
             name="price"

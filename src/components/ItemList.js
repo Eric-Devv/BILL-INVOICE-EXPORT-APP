@@ -7,7 +7,7 @@ const ItemList = ({ items, onDeleteItem }) => {
           {items.map((item) => (
             <div className="item" key={item.id || item.name /* Use unique identifier */}>
               <div>{item.item}</div>
-              <div>Quantity: {item.quantity}</div>
+              <div>Quantity/pieces: {item.quantity}</div>
               <div>Price: <span>Ksh {item.price}</span></div>
               <button className="removebtn"onClick={() => onDeleteItem(item.id || item.name)}>
                 Remove
